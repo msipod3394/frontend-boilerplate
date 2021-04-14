@@ -1,6 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
 
@@ -8,12 +9,12 @@ module.exports = {
     // development | production |none 
     mode: 'development',
 
-    entry: './src/script/index.js',
+    entry: './src/script/main.js',
 
     //  出力ディレクトリ
     output: {
         path: path.resolve(__dirname, './dist'),
-        // filename: 'index.js'
+        filename: './js/main.js',
     },
 
     module :{
@@ -33,10 +34,14 @@ module.exports = {
     },
 
     plugins: [
-        new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin({
+            filename: './css/main.css',
+        }
+        ),
         new HtmlWebpackPugin({
-            template: './src/index.html',
+            template: './src/templates/index.html',
         }),
+        new CleanWebpackPlugin(),
     ],
 
 }
