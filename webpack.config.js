@@ -27,10 +27,22 @@ module.exports = {
                     },
                     {
                         loader: 'css-loader' //SASSをCSSに変換
-                    }
-                ]
-            }
-        ]
+                    },
+                ],
+            },
+            {
+                test: /\.(png|jpg|gif)/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            esModule: false,
+                            name: 'images/[name].[ext]',
+                        }
+                    },
+                ],
+            },
+        ],
     },
 
     plugins: [
