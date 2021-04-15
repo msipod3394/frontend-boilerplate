@@ -42,7 +42,21 @@ module.exports = {
                     },
                 ],
             },
-        ],
+            {
+                test: /\.pug/,
+                use: [
+                    {
+                        loader: 'html-loader',
+                    },
+                    {
+                        loader: 'pug-html-loader',
+                        options: {
+                            pretty: true,
+                         }
+                    },
+                ],
+            },
+       ],
     },
 
     plugins: [
@@ -51,7 +65,13 @@ module.exports = {
         }
         ),
         new HtmlWebpackPugin({
-            template: './src/templates/index.html',
+            template: './src/templates/index.pug',
+            filename: 'index.html',
+        }),
+        new HtmlWebpackPugin({
+            template: './src/templates/access.pug',
+            filename: 'access/index.html',
+
         }),
         new CleanWebpackPlugin(),
     ],
