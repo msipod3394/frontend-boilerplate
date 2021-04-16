@@ -5,10 +5,12 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
 
+    
     // モード
-    // development | production |none 
+    // development | production | none 
     mode: 'development',
-
+    
+    devtool: 'source-map',
     entry: './src/script/main.js',
 
     //  出力ディレクトリ
@@ -19,6 +21,22 @@ module.exports = {
 
     module :{
         rules: [
+            // Babelを使ってES6をトランスパイルする
+            {
+                test: /\.js/,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: [
+                                ['@babel/preset-env', { 'targets': '> 0.25%, not dead' }],                               
+                            ], 
+                        },
+                    },
+                ],
+            },
+            // sass
             {
                 test: /\.(css|sass|scss)/,
                 use: [
@@ -26,13 +44,17 @@ module.exports = {
                         loader: MiniCssExtractPlugin.loader, // javascriptとしてバンドルせず css として出力する
                     },
                     {
-                        loader: 'css-loader'
+                        loader: 'css-loader',
+                        options: {
+                            sourceMap: true,
+                        },
                     },
                     {
                         loader: 'sass-loader' //SASSをCSSに変換
                     },
                 ],
             },
+            // 画像読み込み
             {
                 test: /\.(png|jpg|gif)/,
                 use: [
@@ -45,6 +67,7 @@ module.exports = {
                     },
                 ],
             },
+            // pug
             {
                 test: /\.pug/,
                 use: [

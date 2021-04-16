@@ -2,13 +2,23 @@
 
 ## localサーバーの立ち上げ方
 ```
-npx webpack-dev-server
+npm start
 ```
+
+## 開発モードでのビルド
+```
+npm run build:dev
+```
+
+development モードで出力
 
 ## 本番環境のビルド
 ```
-npx webpack --mode production
+npm run build
 ```
+
+production モードで出力
+
 
 ## Sass のフォルダ構造
 
