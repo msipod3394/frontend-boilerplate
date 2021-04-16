@@ -12,7 +12,7 @@ module.exports = {
     mode: 'development',
 
     devtool: 'source-map',
-    entry: './src/script/main.js',
+    entry: './src/javacscripts/main.js',
 
     //  出力ディレクトリ
     output: {

@@ -46,15 +46,15 @@ $breakpoints: (
 
 // https://www.tam-tam.co.jp/tipsnote/html_css/post10708.html
 
-// .example {
-//   color: #F00;
-//   @include mq() {
-//     color: #00F;
-//   }
-//   @include mq(maxmd) {
-//     color: #0F0;
-//   }
-// }
+.example {
+  color: #F00;
+  @include mq() {
+    color: #00F;
+  }
+  @include mq(maxmd) {
+    color: #0F0;
+  }
+}
 
 @mixin placeholder {
   &:placeholder-shown {
