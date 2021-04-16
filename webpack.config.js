@@ -17,11 +17,12 @@ module.exports = {
     //  出力ディレクトリ
     output: {
         path: path.resolve(__dirname, './dist'),
-        filename: './js/main.js',
+        filename: './js/[name]-[hash].js',
     },
 
     module :{
         rules: [
+            // Vue
             {
                 test: /\.vue/,
                 exclude: /node_modules/,
@@ -72,7 +73,7 @@ module.exports = {
                         loader: 'file-loader',
                         options: {
                             esModule: false,
-                            name: 'images/[name].[ext]',
+                            name: 'images/[name]-[hash].[ext]',
                         }
                     },
                     {
@@ -107,7 +108,7 @@ module.exports = {
     plugins: [
         new VueLoaderPlugin(),
         new MiniCssExtractPlugin({
-            filename: './css/main.css',
+            filename: './css/[name]-[hash].css',
         }
         ),
         new HtmlWebpackPugin({

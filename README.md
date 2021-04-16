@@ -22,6 +22,7 @@ production モードで出力
 
 ## Sass のフォルダ構造
 
+```
 src
 └── stylesheets
     ├── base
@@ -53,7 +54,7 @@ src
     │   ├── project
     │   │   ├── _****..scss
     └── style.scss
-
+```
 
 それぞれのディレクトリの役割は、次のようになります。
 

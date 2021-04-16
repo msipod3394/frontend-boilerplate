@@ -1,5 +1,5 @@
-import my from './my.js';
-import '../style/style.scss';
+import '../style/style.scss'; // webpackでコンパイルするため必須. 実際には.jsには展開されない.
+// import my from './components/common.js';
 
 import Vue from 'vue';
 import VueApp from './VueApp.vue';
@@ -10,4 +10,3 @@ new Vue({
 });
 
 console.log('Hello World!');
-
