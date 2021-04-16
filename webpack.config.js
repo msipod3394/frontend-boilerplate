@@ -9,7 +9,7 @@ module.exports = {
     // モード
     // development | production | none 
     mode: 'development',
-    
+
     devtool: 'source-map',
     entry: './src/script/main.js',
 
@@ -56,7 +56,7 @@ module.exports = {
             },
             // 画像読み込み
             {
-                test: /\.(png|jpg|gif)/,
+                test: /\.(png|jpg|jpeg)/,
                 use: [
                     {
                         loader: 'file-loader',
@@ -64,6 +64,15 @@ module.exports = {
                             esModule: false,
                             name: 'images/[name].[ext]',
                         }
+                    },
+                    {
+                        loader: 'image-webpack-loader',
+                        options: {
+                            mozjpeg: {
+                                progressive: true,
+                                quality: 65,
+                            },
+                        },
                     },
                 ],
             },

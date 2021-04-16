@@ -76,7 +76,6 @@ mixinが定義されているSCSSファイルを格納するディレクトリ�
 初期設定で必要なパラメータなどが定義されているSCSSファイルを格納するディレクトリです。
 
 
-
 ## Installation
 ```
 $ git clone github.com:msipod3394/frontend-boilerplate.git
