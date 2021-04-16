@@ -2,6 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
 
@@ -21,6 +22,15 @@ module.exports = {
 
     module :{
         rules: [
+            {
+                test: /\.vue/,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'vue-loader',
+                    },
+                ],
+            },
             // Babelを使ってES6をトランスパイルする
             {
                 test: /\.js/,
@@ -95,6 +105,7 @@ module.exports = {
     },
 
     plugins: [
+        new VueLoaderPlugin(),
         new MiniCssExtractPlugin({
             filename: './css/main.css',
         }
