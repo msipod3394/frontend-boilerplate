@@ -115,14 +115,10 @@ module.exports = {
             template: './src/templates/index.pug',
             filename: 'index.html',
         }),
-        new HtmlWebpackPugin({
-            template: './src/templates/access.pug',
-            filename: 'access/index.html',
-        }),
-        new HtmlWebpackPugin({
-            template: './src/templates/test_folder/index.pug',
-            filename: 'test_folder/index.html',
-        }),
+        // new HtmlWebpackPugin({
+        //     template: './src/templates/test_folder/index.pug',
+        //     filename: 'test_folder/index.html',
+        // }),
         new CleanWebpackPlugin(),
     ],
 
