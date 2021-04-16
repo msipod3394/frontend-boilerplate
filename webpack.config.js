@@ -20,13 +20,16 @@ module.exports = {
     module :{
         rules: [
             {
-                test: /\.css/,
+                test: /\.(css|sass|scss)/,
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader, // javascriptとしてバンドルせず css として出力する
                     },
                     {
-                        loader: 'css-loader' //SASSをCSSに変換
+                        loader: 'css-loader'
+                    },
+                    {
+                        loader: 'sass-loader' //SASSをCSSに変換
                     },
                 ],
             },
@@ -71,7 +74,10 @@ module.exports = {
         new HtmlWebpackPugin({
             template: './src/templates/access.pug',
             filename: 'access/index.html',
-
+        }),
+        new HtmlWebpackPugin({
+            template: './src/templates/test_folder/index.pug',
+            filename: 'test_folder/index.html',
         }),
         new CleanWebpackPlugin(),
     ],

@@ -1,0 +1,81 @@
+html {
+  font-size: 62.5%; // 10px
+}
+
+body {
+  font-family: $fontFamily;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-feature-settings: "palt" 1;
+  font-feature-settings: "palt" 1;
+  text-rendering: optimizeLegibility;
+  letter-spacing: 0.05em;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  color: $color-black;
+
+  @include mq() {
+    min-width: auto;
+  }
+}
+
+h1, h2, h3 ,h4, h5, h6 {
+  margin: 0;
+  font-weight: bold;
+}
+
+p {
+  margin: 0;
+}
+
+ul, ol, dl, dd {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+strong {
+  font-weight: normal;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+button {
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+input {
+  border: 0;
+  padding: 0;
+  outline: none;
+}
+
+::placeholder {
+}
+
+th {
+  font-weight: normal;
+}
+
+.common-container {
+  margin-top: 80px;
+  width: 100%;
+  min-width: 1200px;
+
+  @include mq {
+    min-width: 100%;
+  }
+}
